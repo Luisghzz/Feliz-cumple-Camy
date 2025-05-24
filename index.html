@@ -1,0 +1,211 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARA CAMY, LA MÁS LINDA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top left, #fffaf4 0%, #ffeaf0 100%);
+      font-family: 'Patrick Hand', cursive;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in;
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .card {
+      background: #ffffff;
+      border: 6px dotted #fddde6;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      width: 360px;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      animation: popIn 1.5s ease;
+      border-image: repeating-linear-gradient(45deg, #ff69b4, #ffc0cb, #ff69b4) 10;
+      border-style: solid;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .card img {
+      max-width: 200px;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+      border-radius: 10px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .card h1 {
+      color: #ff69b4;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      color: #333;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .love {
+      color: #ff1493;
+      font-size: 18px;
+    }
+
+    .heart, .star {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-size: cover;
+      opacity: 0.7;
+      animation: floatUp 6s linear infinite;
+      z-index: 1;
+    }
+
+    .heart {
+      background-image: url('https://cdn-icons-png.flaticon.com/512/1077/1077035.png');
+    }
+
+    .star {
+      background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
+      width: 20px;
+      height: 20px;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.8); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-20vh) scale(1.2); opacity: 0; }
+    }
+
+    .extras {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #f06292;
+      font-size: 14px;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #ffb6c1;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: sparkleAnim 4s infinite ease-in-out;
+      z-index: 1;
+    }
+
+    @keyframes sparkleAnim {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+    }
+
+    .surprise-message {
+      position: absolute;
+      bottom: 20%;
+      font-size: 20px;
+      color: #ff69b4;
+      opacity: 0;
+      animation: surpriseFade 2s ease forwards;
+      z-index: 5;
+    }
+
+    @keyframes surpriseFade {
+      0% { opacity: 0; transform: translateY(10px); }
+      50% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body onclick="triggerSurprise(event)">
+  <!-- Floating hearts and stars -->
+  <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+  <div class="heart" style="left: 30%; animation-delay: 2s;"></div>
+  <div class="heart" style="left: 40%; animation-delay: 3s;"></div>
+  <div class="heart" style="left: 50%; animation-delay: 4s;"></div>
+  <div class="heart" style="left: 60%; animation-delay: 5s;"></div>
+  <div class="heart" style="left: 70%; animation-delay: 6s;"></div>
+  <div class="heart" style="left: 80%; animation-delay: 7s;"></div>
+
+  <div class="star" style="left: 15%; animation-delay: 1s;"></div>
+  <div class="star" style="left: 35%; animation-delay: 2s;"></div>
+  <div class="star" style="left: 55%; animation-delay: 3s;"></div>
+  <div class="star" style="left: 75%; animation-delay: 4s;"></div>
+
+  <!-- Confetti / sparkles -->
+  <div class="sparkle" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="sparkle" style="left: 25%; animation-delay: 1s;"></div>
+  <div class="sparkle" style="left: 40%; animation-delay: 2s;"></div>
+  <div class="sparkle" style="left: 55%; animation-delay: 3s;"></div>
+  <div class="sparkle" style="left: 70%; animation-delay: 4s;"></div>
+  <div class="sparkle" style="left: 85%; animation-delay: 5s;"></div>
+
+  <div class="card">
+    <img src="snoopy1.jpg" alt="Snoopy with Flowers">
+    <h1>Happy Birthday Camy</h1>
+    <p class="message">Feliz cumpleaños a mi estrellita favorita, deseo que te la pases increíble, que esté día y los demás sean maravillosos para ti.</p>
+    <p class="love">Te quiero muchooo, besitos a la cumpleañera</p>
+  </div>
+  <div class="extras">Con mucho cariño para ti — ¡Eres la niña más linda de este mundoo!</div>
+
+  
+  <script>
+  const phrases = [
+    "Tus ojos brillan tanto cómo estrellas<3",
+    "Te quiero mucho Camy",
+    "Tú haces el mundo más bonito solo con existir",
+    "Eres más mágica que un atardecer lleno de colores",
+    "Te mereces todo lo tierno, brillante y feliz de la vida"
+  ];
+
+  let phraseIndex = 0;
+
+  function triggerSurprise(event) {
+    // Lluvia de corazones
+    for (let i = 0; i < 10; i++) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = `${Math.random() * 100}%`;
+      heart.style.top = `${event.clientY}px`;
+      heart.style.animation = `floatUp ${3 + Math.random() * 2}s linear forwards`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    // Frase sorpresa
+    const msg = document.createElement("div");
+    msg.classList.add("surprise-message");
+    msg.innerText = phrases[phraseIndex];
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    document.body.appendChild(msg);
+    setTimeout(() => msg.remove(), 3000);
+  }
+</script>
+  </script>
+</body>
+</html>
